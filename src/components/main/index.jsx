@@ -40,8 +40,14 @@ export default function Main() {
             </Flex>
             <Summary totalExpense={totalExpense} totalIncome={totalIncome} isOpen={isOpen} onClose={onClose}/>
             <Flex w={'full'} alignItems={'flex-start'} justifyContent={'space-evenly'} flexDirection={['column', 'column', 'column', 'row', 'row']}>
-                <ExpenseView />
-                <ExpenseView />
+                <ExpenseView 
+                    data={allTransactions.filter(item => item.type === 'expense')}
+                    type={'expense'}
+                />
+                <ExpenseView 
+                    data={allTransactions.filter(item => item.type === 'income')}
+                    type={'income'}
+                />
             </Flex>
         </Flex>
     );
