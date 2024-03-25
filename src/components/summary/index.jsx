@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/layout";
+import TransactionForm from "../add-transaction";
 
-export default function Summary() {
+export default function Summary({onClose, isOpen}) {
     return (
         <Box p={'6'} border={'1px solid'} borderColor={'gray.100'} overflow={'hidden'} borderRadius={'10'} background={'white'} display={'flex'}>
             <Flex
@@ -78,7 +79,7 @@ export default function Summary() {
                     <Heading>Chart</Heading>
                 </Box>
             </Flex>
-
+            <TransactionForm onClose={onClose} isOpen={isOpen} />
         </Box>
     );
 }
